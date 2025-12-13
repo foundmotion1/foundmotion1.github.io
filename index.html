@@ -3,71 +3,375 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kent Landholm Consulting</title>
+  <title>Kent Landholm - Strategic Growth Partner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
-      color: #333;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+      color: #e0e0e0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 15, 15, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(52, 152, 219, 0.1);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #3498db 0%, #00d4ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #3498db;
+    }
+
+    /* Hero Section */
     header {
-      background: #2c3e50;
-      color: white;
-      padding: 2rem;
+      margin-top: 80px;
+      padding: 6rem 2rem;
       text-align: center;
+      background: linear-gradient(180deg, rgba(52, 152, 219, 0.1) 0%, transparent 100%);
+      border-bottom: 1px solid rgba(52, 152, 219, 0.1);
     }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #00d4ff 0%, #3498db 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      color: #a0a0a0;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #3498db 0%, #00d4ff 100%);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 30px rgba(52, 152, 219, 0.3);
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(52, 152, 219, 0.5);
+    }
+
+    /* Main Content */
     section {
-      padding: 2rem;
-      max-width: 800px;
+      padding: 4rem 2rem;
+      max-width: 1200px;
       margin: auto;
     }
-    h1, h2 {
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #b0b0b0;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .stat-box {
+      background: rgba(52, 152, 219, 0.1);
+      border: 1px solid rgba(52, 152, 219, 0.2);
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .stat-box:hover {
+      background: rgba(52, 152, 219, 0.2);
+      border-color: rgba(52, 152, 219, 0.4);
+      transform: translateY(-5px);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #00d4ff;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: #a0a0a0;
+      font-size: 0.95rem;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+      border: 1px solid rgba(52, 152, 219, 0.2);
+      padding: 2rem;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      background: linear-gradient(135deg, rgba(52, 152, 219, 0.2) 0%, rgba(0, 212, 255, 0.15) 100%);
+      border-color: rgba(52, 152, 219, 0.4);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(52, 152, 219, 0.2);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
-    .cta {
-      background: #3498db;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      margin-top: 2rem;
-      border-radius: 5px;
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #fff;
     }
+
+    .service-card p {
+      color: #a0a0a0;
+      font-size: 0.95rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, rgba(52, 152, 219, 0.15) 0%, rgba(0, 212, 255, 0.1) 100%);
+      border: 1px solid rgba(52, 152, 219, 0.3);
+      border-radius: 16px;
+      padding: 3rem;
+      text-align: center;
+      margin: 4rem 0;
+      backdrop-filter: blur(10px);
+    }
+
+    .cta-section h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      color: #a0a0a0;
+      margin-bottom: 2rem;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: inline-block;
+      background: linear-gradient(135deg, #3498db 0%, #00d4ff 100%);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .contact-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(52, 152, 219, 0.4);
+    }
+
+    /* Footer */
     footer {
       text-align: center;
-      padding: 1rem;
-      background: #ddd;
+      padding: 2rem;
+      background: rgba(15, 15, 15, 0.5);
+      border-top: 1px solid rgba(52, 152, 219, 0.1);
+      color: #707070;
       font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        display: none;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tagline {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
+  <nav>
+    <div class="logo">KENT</div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
   <header>
-    <h1>FoundMotion, Inc.</h1>
-    <p>Strategic Solutions for Modern Businesses</p>
+    <h1>Strategic Growth Partner</h1>
+    <p class="tagline">Transform your vision into exponential growth</p>
+    <a href="#contact" class="hero-cta">Let's Connect</a>
   </header>
 
-  <section>
+  <section id="about">
     <h2>About Me</h2>
-    <p>I'm Kent Landholm, a seasoned consultant helping organizations unlock growth, streamline operations, and navigate change. With years of experience across industries, I bring clarity, strategy, and results to every engagement.</p>
+    <div class="about-content">
+      <div class="about-text">
+        <p>I'm Kent Landholm, a strategic advisor helping visionary leaders and ambitious organizations scale beyond limits. I specialize in unlocking breakthrough growth, optimizing operations, and building high-performance cultures.</p>
+        <p style="margin-top: 1.5rem;">Whether you're scaling a startup or transforming an enterprise, I bring data-driven insights, proven frameworks, and a relentless focus on results.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-box">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Leaders Coached</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">$2B+</div>
+          <div class="stat-label">Growth Generated</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Industries</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Client Success Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section id="services">
     <h2>Services</h2>
-    <ul>
-      <li>Business Strategy & Planning</li>
-      <li>Operational Efficiency</li>
-      <li>Leadership Coaching</li>
-      <li>Change Management</li>
-    </ul>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📈</div>
+        <h3>Growth Strategy</h3>
+        <p>Develop data-driven strategies that accelerate revenue growth and market expansion in competitive landscapes.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Operational Excellence</h3>
+        <p>Streamline workflows, eliminate inefficiencies, and build systems that scale with your ambitions.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👥</div>
+        <h3>Leadership Coaching</h3>
+        <p>Unlock your leadership potential and inspire your team to achieve exceptional results together.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔄</div>
+        <h3>Organizational Transformation</h3>
+        <p>Navigate complex change initiatives and build cultures of innovation and continuous improvement.</p>
+      </div>
+    </div>
+  </section>
 
-    <div class="cta">
-      <p>Ready to elevate your business? Let's talk.</p>
-      <p><strong>Email:</strong> kent.landholm@foundmotion.com</p>
+  <section id="contact">
+    <div class="cta-section">
+      <h3>Ready to Scale?</h3>
+      <p>Let's discuss how we can accelerate your growth and achieve your boldest goals.</p>
+      <div class="contact-info">
+        <a href="mailto:kent.landholm@foundmotion.com" class="contact-link">📧 Email Me</a>
+        <a href="#" class="contact-link">🤝 Book a Call</a>
+      </div>
     </div>
   </section>
 
   <footer>
-    &copy; FoundMotion, Inc. All rights reserved.
+    © 2025 FoundMotion, Inc. All rights reserved.
   </footer>
 </body>
 </html>
